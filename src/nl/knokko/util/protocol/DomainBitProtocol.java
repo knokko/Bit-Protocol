@@ -45,7 +45,6 @@ public class DomainBitProtocol<Handler> implements BitProtocol<Handler> {
 		int index = (int) input.readNumber(bitCount, false);
 		if (index < 0 || index >= protocols.length || protocols[index] == null)
 			throw new IllegalArgumentException("Invalid code: " + index);
-		System.out.println("DomainBitProtocol.process: index is " + index);
 		this.protocols[index].process(input, handler);
 	}
 }
